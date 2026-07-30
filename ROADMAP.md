@@ -186,11 +186,48 @@ Deliverables:
 - Reflection
 - Git Commits
 
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
 Interview Preparation:
 Linux administration fundamentals
 
-Completion Criteria:
-All lessons, labs and project completed.
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
 
 Phase Exit Criteria:
 Able to administer a Linux server independently.
@@ -200,38 +237,520 @@ Able to administer a Linux server independently.
 ## Remaining Phases
 
 ### Phase 2 — Networking Fundamentals (2–3 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
 Project: Build a networked Linux environment.
 
+---
+
 ### Phase 3 — Git & Version Control (2 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Collaborative Git workflow.
 
+---
+
 ### Phase 4 — Docker (3 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Containerize a multi-service application.
 
+---
+
 ### Phase 5 — Kubernetes (4–5 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Deploy a production-ready application.
 
+---
+
 ### Phase 6 — CI/CD (3 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Automated deployment pipeline.
 
+---
+
 ### Phase 7 — AWS (4 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Deploy cloud infrastructure.
 
+---
+
 ### Phase 8 — Terraform (2–3 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Infrastructure provisioning.
 
+---
+
 ### Phase 9 — Ansible (2 Weeks)
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Automated server configuration.
 
+---
+
 ### Phase 10 — Monitoring & Logging (3 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Monitoring platform.
 
+---
+
 ### Phase 11 — DevOps Security (2 Weeks)
+
+### Recommended Resources
+
+**Primary**
+- DLOS Lessons
+
+**Concept Reinforcement**
+- Nana Janashia
+
+**Hands-on**
+- KodeKloud Labs
+
+**Reference**
+- Official Documentation
+
+---
+
+### Mini Project
+
+(To be completed during this module.)
+
+---
+
+### Independent Project
+
+(To be designed and implemented without following a tutorial.)
+
+---
+
+### Interview Readiness
+
+- Concepts understood
+- Hands-on completed
+- Able to explain architecture
+- Able to troubleshoot
+
+---
+
+### Definition of Done
+
+- Theory completed
+- Labs completed
+- Independent project completed
+- Documentation committed
+- GitHub updated
+
 Project: Secure deployment pipeline.
+
+---
 
 ### Phase 12 — Capstone Projects (4–6 Weeks)
 
+---
+
 ### Phase 13 — Career Preparation & Specialization (Ongoing)
+
+---
 
 # 8. Learning Methodology
 

@@ -2,9 +2,9 @@
 
 **Version:** 1.0.0  
 **Status:** Active  
-**Owner:** <Your Name>  
+**Owner:** <Abhinav Krishna>  
 **Repository:** DevOps Journey  
-**Last Updated:** YYYY-MM-DD
+**Last Updated:** 2026-07-30
 
 ---
 
@@ -184,6 +184,18 @@ Every topic should answer six fundamental questions:
 6. What interview questions are commonly asked?
 
 Understanding these questions ensures both theoretical depth and practical relevance.
+
+## Multi-Resource Learning Philosophy
+
+Every technology should be learned using multiple complementary resources.
+
+- DLOS lessons for structured learning
+- Official documentation for reference
+- Nana Janashia for conceptual reinforcement
+- KodeKloud for guided labs
+- Independent projects for practical application
+
+No single resource should be considered sufficient on its own.
 
 ---
 
@@ -554,7 +566,28 @@ This principle ensures DLOS remains maintainable, transferable, and useful regar
 
 ---
 
-# 24. Version History
+# 24. DLOS Evolution Roadmap
+
+The DLOS itself will evolve as part of the learning journey.
+
+Phase 1
+- Static documentation
+
+Phase 2
+- Bash automation
+
+Phase 3
+- Python CLI
+
+Phase 4
+- Dynamic dashboard
+
+Phase 5
+- Open-source learning platform
+
+---
+
+# 25. Version History
 
 | Version | Date | Description |
 |----------|------------|--------------------------------------------------------------|

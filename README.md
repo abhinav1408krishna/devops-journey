@@ -49,24 +49,22 @@ DLOS/
 
 # Learning Workflow
 
-Every lesson follows the same lifecycle:
+Every lesson follows the same workflow:
 
 ```text
-Learn
-   ↓
-Understand
-   ↓
-Practice
-   ↓
-Experiment
-   ↓
-Document
-   ↓
-Reflect
-   ↓
-Commit
-   ↓
-Track Progress
+Theory
+↓
+Hands-on Practice
+↓
+Mini Challenge
+↓
+Knowledge Book Update
+↓
+Git Commit
+↓
+GitHub Push
+↓
+Weekly Review
 ```
 
 ---
@@ -159,6 +157,21 @@ Current lesson progress is maintained in **LEARNING_TRACKER.md**.
 # Contributing
 
 This is a personal learning repository. Suggestions, discussions, and improvements are welcome.
+
+---
+
+## Learning Resources Strategy
+
+DLOS follows a multi-source learning philosophy where each resource has a distinct purpose.
+
+| Resource | Purpose |
+|----------|---------|
+| DLOS | Primary curriculum and structured roadmap |
+| Nana Janashia | Concept reinforcement and industry best practices |
+| KodeKloud | Guided hands-on labs and certification preparation |
+| Official Documentation | Reference and authoritative learning |
+| GitHub Repository | Portfolio, documentation, and project showcase |
+
 
 ---
 

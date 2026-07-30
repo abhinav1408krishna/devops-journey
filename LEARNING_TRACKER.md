@@ -25,7 +25,7 @@
 
 # Current Sprint
 
-**Sprint:** Repository Foundation → Resume Learning
+**Sprint:** Sprint 2 — Linux Fundamentals
 
 ## Sprint Goals
 
@@ -99,18 +99,44 @@
 - [x] Repository Created
 - [x] DLOS.md Completed
 - [x] ROADMAP.md Completed
-- [ ] Linux Fundamentals Complete
-- [ ] Networking Complete
-- [ ] Git Complete
-- [ ] Docker Complete
-- [ ] Kubernetes Complete
-- [ ] CI/CD Complete
-- [ ] AWS Complete
-- [ ] Terraform Complete
-- [ ] Ansible Complete
-- [ ] Monitoring Complete
-- [ ] Security Complete
-- [ ] Capstone Complete
+- [ ] Linux Foundation
+- [ ] Networking
+- [ ] Git & GitHub
+- [ ] Bash Scripting
+- [ ] Python
+- [ ] Docker
+- [ ] Kubernetes
+- [ ] Jenkins & CI/CD
+- [ ] AWS
+- [ ] Terraform
+- [ ] Ansible
+- [ ] Monitoring
+- [ ] Final DevOps Capstone
+
+---
+
+# Future Automation Projects
+
+- [ ] Bash Automation Toolkit
+- [ ] Python DLOS CLI
+- [ ] Dynamic Learning Dashboard
+- [ ] Automatic Progress Tracker
+
+---
+
+## Current Focus
+
+Current Sprint:
+
+Current Module:
+
+Current Lesson:
+
+Current Project:
+
+Next Lesson:
+
+Next Milestone:
 
 ---
 
