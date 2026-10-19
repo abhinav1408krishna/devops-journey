@@ -1,7 +1,7 @@
 # LEARNING_TRACKER.md
 
-**Version:** 1.0.0  
-**Status:** Active  
+**Version:** 1.1.0
+**Status:** Active
 **Related Documents:** DLOS.md, ROADMAP.md
 
 > The Learning Tracker is the operational dashboard for the DevOps Learning Operating System (DLOS). It answers one question: **Where am I in my learning journey right now?**
@@ -18,8 +18,8 @@
 | Current Lesson | Day 6 |
 | Status | In Progress |
 | Active Mini Project | None |
-| Active Phase Project | Linux Server Administration Lab |
-| Repository Version | v1.0.0 |
+| Planned Phase Project | Linux Server Administration Lab |
+| Repository Version | v1.1.0 |
 
 ---
 
@@ -29,11 +29,13 @@
 
 ## Sprint Goals
 
-- [x] DLOS.md
-- [x] ROADMAP.md
-- [ ] LEARNING_TRACKER.md
-- [ ] SYSTEM_CHANGELOG.md
-- [ ] Templates
+- [x] Document KodeKloud Linux Basics coverage
+- [ ] Complete focused process management learning
+- [ ] Complete environment variables learning
+- [ ] Complete Bash scripting gap work
+- [ ] Complete Linux logging gap work
+- [ ] Complete required Linux hands-on work
+- [ ] Update Linux Knowledge Book and coverage record
 
 ---
 
@@ -85,12 +87,17 @@
 # Active Tasks
 
 ## Current
-- Complete Repository Foundation
-- Resume Linux Day 6
+
+- Review and maintain Resources/Linux-Coverage.md
+- Begin focused Linux process management learning
+- Keep Linux Fundamentals marked In Progress
 
 ## Next
-- Finish Linux Fundamentals
-- Begin Networking Fundamentals
+
+- Learn environment variables
+- Complete the Bash scripting gap curriculum
+- Practice Linux log investigation
+- Build the Linux Server Administration Lab
 
 ---
 
@@ -126,17 +133,17 @@
 
 ## Current Focus
 
-Current Sprint:
+Current Sprint: Sprint 2 — Linux Fundamentals
 
-Current Module:
+Current Module: Linux gap analysis and deeper administration skills
 
-Current Lesson:
+Current Lesson: Day 6 — Process Management
 
-Current Project:
+Current Project: Linux Server Administration Lab — Planned
 
-Next Lesson:
+Next Lesson: Environment Variables
 
-Next Milestone:
+Next Milestone: Complete the Linux Fundamentals Definition of Done
 
 ---
 
@@ -161,16 +168,17 @@ For every lesson:
 | Phases Completed | 1 / 14 |
 | Current Phase | Linux Fundamentals |
 | Current Lesson | Day 6 |
-| Active Sprint | Repository Foundation |
+| Active Sprint | Sprint 2 — Linux Fundamentals |
 
 ---
 
 # Next Recommended Action
 
-1. Complete SYSTEM_CHANGELOG.md.
-2. Create repository templates.
-3. Resume Linux Day 6.
-4. Update this tracker after each lesson.
+1. Begin focused process management learning, emphasizing concepts not already covered in Day 4.
+2. Complete hands-on exercises and document the results.
+3. Update the tracker and Knowledge Book based on actual work completed.
+4. Continue with environment variables, Bash scripting, and Linux logging.
+5. Complete the Linux Server Administration Lab before marking the phase complete.
 
 ---
 
@@ -189,4 +197,4 @@ Update this document whenever:
 
 | Version | Date | Description |
 |----------|------|-------------|
-| 1.0.0 | YYYY-MM-DD | Initial learning tracker. |
+| 1.1.0 | Not Recorded | Aligned tracker with DLOS v1.1 governance and Linux gap plan. |

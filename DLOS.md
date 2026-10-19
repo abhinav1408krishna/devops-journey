@@ -1,10 +1,10 @@
 # DevOps Learning Operating System (DLOS)
 
-**Version:** 1.0.0  
-**Status:** Active  
-**Owner:** <Abhinav Krishna>  
-**Repository:** DevOps Journey  
-**Last Updated:** 2026-07-30
+**Version:** 1.1.0
+**Status:** Active
+**Owner:** Abhinav Krishna
+**Repository:** DevOps Journey
+**Last Updated:** 2026-10-19
 
 ---
 
@@ -33,7 +33,8 @@
 21. Future Evolution
 22. Success Criteria
 23. Guiding Principle
-24. Version History
+24. DLOS Evolution Roadmap
+25. Version History
 
 ---
 
@@ -246,33 +247,24 @@ A learning day is considered complete only when all applicable tasks have been f
 
 # 10. Repository Structure
 
-The repository is organized to separate governance, learning content, projects, and documentation.
+The repository keeps governance documents, learning notes, progress tracking, templates, and supporting resources organized at the root level.
 
 ```text
-README.md
-
-DLOS/
+devops-journey/
+├── README.md
 ├── DLOS.md
 ├── SYSTEM_CHANGELOG.md
-
-ROADMAP/
 ├── ROADMAP.md
 ├── LEARNING_TRACKER.md
+├── PROJECTS.md
+├── Day1/
+├── Day2/
+├── Day3/
+├── Day4/
+├── Day5/
+├── Templates/
+└── Resources/
 
-Knowledge-Book/
-
-Projects/
-
-Templates/
-
-Resources/
-
-Weekly-Reviews/
-
-Day1/
-Day2/
-Day3/
-...
 ```
 
 Each directory has a single responsibility.
@@ -588,10 +580,10 @@ Phase 5
 ---
 
 # 25. Version History
-
 | Version | Date | Description |
 |----------|------------|--------------------------------------------------------------|
-| 1.0.0 | YYYY-MM-DD | Initial release of the DevOps Learning Operating System (DLOS). |
+| 1.0.0 | Not recorded | Initial release of the DevOps Learning Operating System (DLOS). |
+| 1.1.0 | Not recorded | Governance alignment and documentation updates. |
 
 ---
 
