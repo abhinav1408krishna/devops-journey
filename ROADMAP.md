@@ -52,33 +52,7 @@ Linux → Networking → Git → Docker → Kubernetes → CI/CD → AWS → Ter
 
 # 5. Curriculum Overview
 
-Repository Foundation
-↓
-Linux
-↓
-Networking
-↓
-Git
-↓
-Docker
-↓
-Kubernetes
-↓
-CI/CD
-↓
-AWS
-↓
-Terraform
-↓
-Ansible
-↓
-Monitoring
-↓
-Security
-↓
-Capstone
-↓
-Career Preparation
+Repository Foundation → Linux → Networking → Git → Docker → Kubernetes → CI/CD → AWS → Terraform → Ansible → Monitoring & Logging → DevOps Security → Capstone → Career Preparation
 
 # 6. Current Position
 
