@@ -48,7 +48,7 @@ Foundation → Core DevOps → Cloud → Automation → Production Engineering �
 
 # 4. Learning Progression
 
-Linux → Networking → Git → Docker → Kubernetes → CI/CD → AWS → Terraform → Ansible → Monitoring → Security → Capstone → Career
+Linux → Networking → Git → Docker → Kubernetes → CI/CD → AWS → Terraform → Ansible → Monitoring & Logging → DevOps Security → Capstone → Career Preparation
 
 # 5. Curriculum Overview
 
