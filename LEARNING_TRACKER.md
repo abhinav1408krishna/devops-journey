@@ -149,15 +149,22 @@ Next Milestone: Complete the Linux Fundamentals Definition of Done
 
 # Definition of Done Checklist
 
-For every lesson:
+For every learning unit, assess the applicable learning requirements:
 
-- [ ] Theory completed
-- [ ] Hands-on completed
-- [ ] Notes written
-- [ ] Knowledge Book updated
+- [ ] Learning objectives addressed
+- [ ] Required hands-on work completed and results recorded
+- [ ] Notes and troubleshooting observations documented
+- [ ] Knowledge Book updated when useful new reference material was learned
 - [ ] Reflection completed
-- [ ] Git commit created
-- [ ] Tracker updated
+- [ ] Tracker updated to reflect actual progress
+
+Repository synchronization is handled in reviewed batches:
+
+- [ ] Related changes reviewed and validated
+- [ ] Focused Git commit created
+- [ ] Changes pushed successfully to GitHub
+
+A learning unit does not require its own commit. Do not mark unfinished learning work complete merely because its documentation has been committed.
 
 ---
 

@@ -217,31 +217,41 @@ Document
     ↓
 Reflect
     ↓
-Commit
-    ↓
 Track Progress
+    ↓
+Review and Sync Repository Changes in Batches
 ```
 
-Learning is considered complete only after every stage has been finished.
+Learning completion depends on the learning requirements being satisfied. Repository changes can be reviewed and synchronized in batches.
 
 ---
 
 # 9. Definition of Done (DoD)
 
-A learning day is considered complete only when all applicable tasks have been finished.
+A learning unit is complete when its applicable learning objectives, practical work, evidence, and reflection are finished. Repository synchronization is managed separately through reviewed batches.
 
-## Required Checklist
+## Learning Completion Checklist
 
-- Theory completed
-- Hands-on exercises completed
-- Commands practiced
-- Notes documented
-- Knowledge Book updated (if applicable)
-- Reflection written
-- Git commit completed
-- Learning Tracker updated
-- Assignments completed
-- Mini-project completed (if assigned)
+- Learning objectives and theory addressed
+- Applicable hands-on exercises completed and results recorded
+- Relevant commands practiced
+- Notes and troubleshooting observations documented
+- Knowledge Book updated when useful new reference material was learned
+- Reflection completed
+- Required assignments and mini-projects completed, if assigned
+- Learning Tracker updated to reflect actual progress
+
+## Repository Batch Completion Checklist
+
+Before a related batch is considered synchronized with GitHub:
+
+- Changes reviewed for correctness and accidental content
+- Documentation, links, and relevant validation checks reviewed
+- Related changes grouped into a focused commit
+- Commit created and pushed successfully
+- Tracker and governance status remain consistent with the repository
+
+A pending repository batch does not by itself invalidate completed learning. Incomplete exercises, missing required evidence, or unfinished project criteria must not be marked complete.
 
 ---
 
@@ -264,6 +274,7 @@ devops-journey/
 ├── Day5/
 ├── Templates/
 └── Resources/
+    └── Linux-Coverage.md
 
 ```
 

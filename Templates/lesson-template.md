@@ -45,9 +45,13 @@
 - What will I practice next?
 
 ## Definition of Done
-- [ ] Theory completed
-- [ ] Labs completed
-- [ ] Notes updated
-- [ ] Knowledge Book updated
-- [ ] Git commit
-- [ ] Learning Tracker updated
+- [ ] Learning objectives addressed
+- [ ] Required labs completed and outcomes recorded
+- [ ] Notes, commands, and troubleshooting observations updated
+- [ ] Knowledge Book updated if useful new reference material was learned
+- [ ] Reflection completed
+- [ ] Learning Tracker updated accurately
+
+## Repository Sync
+- [ ] Included in a reviewed documentation batch when appropriate
+- [ ] Batch committed and pushed when ready
