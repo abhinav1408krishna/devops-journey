@@ -1,10 +1,10 @@
 # DevOps Learning Operating System (DLOS)
 
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Status:** Active
 **Owner:** Abhinav Krishna
 **Repository:** DevOps Journey
-**Last Updated:** 2026-10-19
+**Last Updated:** 2026-10-23
 
 ---
 
@@ -323,6 +323,32 @@ Each project should demonstrate:
 - Documentation
 - Version control
 
+### Project Build Guide Standard
+
+Every project must include a beginner-friendly build guide that enables a reader without prior DevOps or computer science experience to build, run, verify, and safely clean up the project by following the documented steps.
+
+Project guides must include:
+
+- **Prerequisites:** Required tools, environment setup, permissions, and relevant safety or cost considerations.
+- **Project structure:** Exact directory and file paths, commands to create them, and an explanation of their purpose.
+- **Step-by-step implementation:** Instructions for creating each file and building its contents in understandable sections, explaining the purpose and logic of important components.
+- **Integration and execution:** How components connect, how to configure the project, and the exact commands to run it.
+- **Verification:** Validation commands, expected results, and tests that demonstrate whether the project works.
+- **Troubleshooting:** Common problems, diagnostic steps, and practical solutions.
+- **Cleanup:** Instructions for safely removing temporary files and resources, especially cloud infrastructure or billable services.
+- **Acceptance criteria:** Clear, testable conditions that must be satisfied before the project can be marked complete.
+- **Evidence and reflection:** Relevant outputs or screenshots, challenges encountered, lessons learned, and possible improvements.
+
+Guides should teach the reader how to build the project rather than merely provide a complete code dump. Use code examples where helpful, but explain what each important section does and how it fits into the overall system.
+
+Use `Templates/project-template.md` as the starting point for new project guides. Adapt the template to the project's actual requirements rather than leaving generic placeholders in the final guide.
+
+Keep responsibilities separate:
+- `ROADMAP.md` defines phase learning requirements and exit criteria.
+- `PROJECTS.md` tracks the project portfolio and its status.
+- Individual project guides document implementation and verification.
+- `LEARNING_TRACKER.md` records actual learning progress.
+
 ---
 
 # 14. Progress Tracking
@@ -593,8 +619,9 @@ Phase 5
 # 25. Version History
 | Version | Date | Description |
 |----------|------------|--------------------------------------------------------------|
-| 1.0.0 | Not recorded | Initial release of the DevOps Learning Operating System (DLOS). |
+| 1.2.0 | Not recorded | Added project build-guide standards, improved portfolio status tracking, and aligned governance completion criteria. |
 | 1.1.0 | Not recorded | Governance alignment and documentation updates. |
+| 1.0.0 | Not recorded | Initial release of the DevOps Learning Operating System (DLOS). |
 
 ---
 

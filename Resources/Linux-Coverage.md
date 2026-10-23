@@ -221,7 +221,8 @@ The DLOS Linux phase is complete only when:
 - Reflection is completed
 - Definition of Done is satisfied
 - Learning Tracker is updated
-- Changes are committed and pushed to GitHub
+
+Repository changes are reviewed, validated, and synchronized in batches according to the DLOS repository workflow. Pending repository synchronization does not by itself invalidate completed learning.
 
 ---
 

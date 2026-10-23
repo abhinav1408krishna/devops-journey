@@ -76,20 +76,23 @@ The goal is consistent, trustworthy documentation without unnecessary administra
 
 The planned learning journey is:
 
-1. Repository Foundation
-2. Linux Fundamentals
-3. Networking
-4. Git and Version Control
-5. Docker
-6. Kubernetes
-7. CI/CD
-8. AWS
-9. Terraform
-10. Ansible
-11. Monitoring and Logging
-12. DevOps Security
-13. Capstone Projects
-14. Career Preparation and Specialization
+**Phase 0 — Repository Foundation** (Completed)
+
+The 13 learning phases follow:
+
+1. Linux Fundamentals
+2. Networking
+3. Git and Version Control
+4. Docker
+5. Kubernetes
+6. CI/CD
+7. AWS
+8. Terraform
+9. Ansible
+10. Monitoring and Logging
+11. DevOps Security
+12. Capstone Projects
+13. Career Preparation and Specialization
 
 See [ROADMAP.md](ROADMAP.md) for phase details and progression criteria.
 
@@ -120,10 +123,16 @@ Learning records and projects should include the elements relevant to their scop
 - Reflection and a clear completion checklist
 
 ### Projects
-- Problem statement, requirements, and architecture
-- Implementation and setup instructions
-- Tests or validation evidence
+- Problem statement, objectives, requirements, and architecture
+- Beginner-friendly, step-by-step build instructions that do not assume prior DevOps or computer science experience
+- Exact directory and file paths, setup commands, and section-by-section implementation guidance
+- Explanations of important code, configuration, and component interactions
+- Run instructions, verification commands, expected results, and tests
+- Troubleshooting guidance and safe cleanup instructions
+- Clear acceptance criteria and evidence supporting completion
 - Challenges, lessons learned, and future improvements
+
+Use [`Templates/project-template.md`](Templates/project-template.md) as the starting point for new project guides. Adapt it to the actual project and remove generic placeholders before considering the guide complete.
 
 ### Progress and Documentation
 - Keep the tracker consistent with actual work.

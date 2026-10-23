@@ -1,7 +1,7 @@
 # SYSTEM_CHANGELOG.md
 
-**Version:** 1.1.0  
-**Status:** Active  
+**Version:** 1.2.0
+**Status:** Active
 **Related Documents:** DLOS.md, ROADMAP.md, LEARNING_TRACKER.md
 
 > This document records the evolution of the DevOps Learning Operating System (DLOS). Unlike Git history, it captures the intent, reasoning, and impact of changes made to the learning system.
@@ -145,15 +145,20 @@ Established the DevOps Learning Operating System as the single source of truth f
 
 ---
 
-# Planned Releases
+# Release History
 
-## Version 1.2.0
+## Version 1.2.0 - Current Release
 
-Planned additions:
+Completed in this release:
+
+- Better portfolio tracking and project status definitions
+- Beginner-friendly project build-guide template and documentation standards
+- Consistent phase-count and completion criteria across governance documents
+
+Still planned:
 
 - RESOURCES.md
 - Improved dashboard
-- Better portfolio tracking
 - Learning analytics
 
 ---
@@ -183,8 +188,9 @@ Planned additions:
 
 | Version | Date | Summary |
 |----------|------------|--------------------------------------------------------------|
-| **1.1.0** | YYYY-MM-DD | Added multi-resource learning strategy, KodeKloud & Nana integration, milestones, automation roadmap, PROJECTS.md, and portfolio-driven learning. |
-| **1.0.0** | YYYY-MM-DD | Initial DLOS governance foundation and repository architecture established. |
+| **1.2.0** | 2026-10-23 | Added project build-guide standards, improved portfolio status tracking, and aligned governance completion criteria. |
+| **1.1.0** | Not recorded | Added multi-resource learning strategy, KodeKloud & Nana integration, milestones, automation roadmap, PROJECTS.md, and portfolio-driven learning. |
+| **1.0.0** | Not recorded | Initial DLOS governance foundation and repository architecture established. |
 
 ---
 
@@ -221,6 +227,6 @@ Those belong in their respective documents.
 
 **Document Status:** Active
 
-**Current Version:** 1.1.0
+**Current Version:** 1.2.0
 
-**Next Planned Version:** 1.2.0
+**Next Planned Version:** 1.3.0

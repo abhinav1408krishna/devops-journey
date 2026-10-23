@@ -1,10 +1,10 @@
 # DLOS Project Portfolio
 
-This file tracks every independent project completed during the DevOps Learning Operating System journey.
+This file is the portfolio index for projects planned, in progress, blocked, and completed during the DevOps Learning Operating System journey. Project status must reflect actual progress and be supported by evidence.
 
-## Planned Projects
+## Project Portfolio
 
-- [ ] Linux Administration Lab
+- [ ] Linux Server Administration Lab
 - [ ] Networking Troubleshooting Toolkit
 - [ ] Advanced Git Workflow Project
 - [ ] Bash Automation Toolkit
@@ -18,15 +18,28 @@ This file tracks every independent project completed during the DevOps Learning 
 - [ ] Monitoring Stack (Prometheus + Grafana)
 - [ ] Final End-to-End DevOps Platform
 
-## Project Template
+## Project Guide Requirements
 
-Each project should include:
+Create each project guide using [`Templates/project-template.md`](Templates/project-template.md).
 
-- Objective
-- Architecture
-- Technologies Used
-- Setup Instructions
-- Screenshots
-- Challenges Faced
-- Lessons Learned
-- Future Improvements
+Adapt the guide to the project's actual requirements and include, where applicable:
+
+- Project purpose, objectives, prerequisites, and requirements
+- Architecture and design decisions
+- Exact directory structure, file paths, and setup commands
+- Beginner-friendly, step-by-step implementation instructions with explanations
+- Configuration, integration, and execution instructions
+- Testing, validation commands, and expected results
+- Troubleshooting and safe cleanup procedures
+- Testable acceptance criteria
+- Evidence of implementation and verification
+- Challenges, lessons learned, and future improvements
+
+## Project Status
+
+- **Planned:** Defined but implementation has not started.
+- **In Progress:** Implementation or project validation has started.
+- **Blocked:** Work cannot proceed until a dependency or issue is resolved.
+- **Completed:** All applicable acceptance criteria are met and supporting evidence is documented.
+
+Keep project status here aligned with the actual project guide and the Learning Tracker when relevant. Do not mark a project complete based only on planning or documentation preparation.

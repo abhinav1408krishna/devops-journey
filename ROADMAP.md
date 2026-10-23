@@ -1,9 +1,9 @@
 # DevOps Learning Roadmap
 
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Status:** Active
 **Related Document:** DLOS.md
-**Last Updated:** 2026-10-22
+**Last Updated:** 2026-10-23
 
 > Purpose: Defines the complete DevOps curriculum for DLOS.
 
@@ -1205,7 +1205,16 @@ Advance only after:
 
 # 13. Completion Criteria
 
-Complete all phases, projects and documentation.
+The DevOps learning journey is complete when:
+
+- All learning phases satisfy their documented phase exit criteria.
+- Required hands-on work and applicable phase projects meet their acceptance criteria.
+- Project implementation and verification evidence is documented.
+- Required learning artifacts and Knowledge Book references are maintained.
+- The Learning Tracker accurately reflects completed work and remaining gaps.
+- The portfolio presents the work honestly, including known limitations and unfinished items.
+
+The phase-specific exit criteria in this roadmap are authoritative; this overall criterion does not replace them.
 
 # 14. Long-Term Goals
 
@@ -1219,6 +1228,7 @@ Azure, GCP, GitOps, MLOps, Platform Engineering.
 
 | Version | Date | Description |
 |----------|------|-------------|
+| 1.2.0 | 2026-10-23 | Clarified overall completion criteria and aligned project acceptance and evidence expectations. |
 | 1.1.0 | 2026-10-22 | Expanded phase learning outcomes, project acceptance criteria, interview-readiness checkpoints, and definitions of done across the roadmap. |
 | 1.0.0 | Not recorded | Initial curriculum release. |
 

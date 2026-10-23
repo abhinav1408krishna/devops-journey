@@ -1,6 +1,6 @@
 # LEARNING_TRACKER.md
 
-**Version:** 1.1.0
+**Version:** 1.2.0
 **Status:** Active
 **Related Documents:** DLOS.md, ROADMAP.md
 
@@ -19,7 +19,7 @@
 | Status | In Progress |
 | Active Mini Project | None |
 | Planned Phase Project | Linux Server Administration Lab |
-| Repository Version | v1.1.0 |
+| Repository Version | v1.2.0 |
 
 ---
 
@@ -172,7 +172,8 @@ A learning unit does not require its own commit. Do not mark unfinished learning
 
 | Metric | Value |
 |---------|-------|
-| Phases Completed | 1 / 14 |
+| Repository Foundation | Complete (Phase 0) |
+| Learning Phases Completed | 0 / 13 |
 | Current Phase | Linux Fundamentals |
 | Current Lesson | Day 6 |
 | Active Sprint | Sprint 2 — Linux Fundamentals |
@@ -204,4 +205,5 @@ Update this document whenever:
 
 | Version | Date | Description |
 |----------|------|-------------|
+| 1.2.0 | Not recorded | Updated project documentation standards, portfolio status tracking, and governance completion criteria. |
 | 1.1.0 | Not Recorded | Aligned tracker with DLOS v1.1 governance and Linux gap plan. |
