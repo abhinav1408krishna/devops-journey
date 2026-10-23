@@ -25,7 +25,7 @@ The repository is organized around four principles:
 
 The diagram below reflects the current repository layout. Additional directories will be added when their contents are ready.
 
-\`\`\`text
+```text
 devops-journey/
 ├── README.md
 ├── DLOS.md
@@ -39,9 +39,9 @@ devops-journey/
 ├── Day4/
 ├── Day5/
 ├── Templates/
-├── Resources/
-│   └── Linux-Coverage.md
-\`\`\`
+└── Resources/
+    └── Linux-Coverage.md
+```
 
 ---
 
