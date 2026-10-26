@@ -17,7 +17,7 @@
 | Current Phase | Linux Fundamentals |
 | Current Lesson | Day 6 |
 | Status | In Progress |
-| Active Mini Project | None |
+| Active Mini Project | Linux Server Administration Lab — In Progress |
 | Planned Phase Project | Linux Server Administration Lab |
 | Repository Version | v1.2.0 |
 
@@ -97,7 +97,7 @@
 - Learn environment variables
 - Complete the Bash scripting gap curriculum
 - Practice Linux log investigation
-- Build the Linux Server Administration Lab
+- Complete final documentation, repository consistency, and security reviews for the Linux Server Administration Lab
 
 ---
 
@@ -139,7 +139,7 @@ Current Module: Linux gap analysis and deeper administration skills
 
 Current Lesson: Day 6 — Process Management
 
-Current Project: Linux Server Administration Lab — Planned
+Current Project: Linux Server Administration Lab — In Progress (core implementation and tests complete; final review pending)
 
 Next Lesson: Environment Variables
 

@@ -4,7 +4,7 @@ This file is the portfolio index for projects planned, in progress, blocked, and
 
 ## Project Portfolio
 
-- [ ] Linux Server Administration Lab
+- [ ] Linux Server Administration Lab — In Progress (core implementation and tests complete; final review pending)
 - [ ] Networking Troubleshooting Toolkit
 - [ ] Advanced Git Workflow Project
 - [ ] Bash Automation Toolkit

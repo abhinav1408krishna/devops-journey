@@ -1,0 +1,38 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials
+credentials.*
+secrets/
+.secret/
+
+# Local overrides and temporary files
+*.local
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Test and runtime output
+*.log
+coverage/
+
+# Machine-specific lab output and raw inspection reports
+Projects/Linux-Server-Administration-Lab/local-output/
+Projects/Linux-Server-Administration-Lab/evidence/*-inspection-report.txt
+Projects/Linux-Server-Administration-Lab/evidence/automation-run-report.txt
