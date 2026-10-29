@@ -422,7 +422,7 @@ The structure is a starting point and may be extended when a genuine project req
 
 This section records the practical implementation of the Linux Server Administration Lab. Each stage introduces a specific administrative task, explains its relevance, provides commands, and defines how to verify the result.
 
-**Implementation status:** Core inspection and automation implementation completed; final project completion remains in progress. Steps 1–10 have been implemented and validated through inspection scripts, automated tests, and saved evidence. End-to-end validation passed with 10 test suites and zero failures; the automation runner executed all nine inspection scripts with zero failures. A disposable temporary-file and directory cleanup test passed. Process/service cleanup has not been tested; final documentation and repository security review remain pending.
+**Implementation status:** Core inspection and automation implementation completed; final project completion remains in progress. Steps 1–10 have been implemented and validated through inspection scripts, automated tests, and saved evidence. End-to-end validation passed with 11 test suites and zero failures; the automation runner executed all nine inspection scripts with zero failures. Disposable temporary-file/directory cleanup and a disposable child-process cleanup test passed. Service cleanup has not been tested; final documentation and repository security review remain pending.
 
 ### Implementation Roadmap
 
@@ -438,7 +438,7 @@ This section records the practical implementation of the Linux Server Administra
 | 8 | Logs and troubleshooting | Investigates operational failures | Completed |
 | 9 | Disk and resource inspection | Identifies capacity and resource issues | Completed |
 | 10 | Bash automation | Makes repeatable administrative tasks more efficient | Completed |
-| 11 | End-to-end validation | Demonstrates that project requirements are satisfied | Test suites passed; disposable cleanup test passed; process/service cleanup and final review remain |
+| 11 | End-to-end validation | Demonstrates that project requirements are satisfied | 11 test suites passed; disposable file and process cleanup tests passed; service cleanup and final review remain |
 
 Statuses in this roadmap will be updated as implementation progresses. A command appearing in this guide is not evidence that the associated task has been completed.
 
@@ -645,7 +645,7 @@ Use the stop, restart, or cleanup procedure documented for the specific task. Do
 
 System services must be checked individually before management commands are used.
 
-**Current status:** The baseline inspection and inspection-script workflow have been implemented and validated. The automated test runner completed 10 test suites with zero failures, and all nine inspection scripts ran without reported failures. Disposable temporary-file and directory cleanup was tested successfully. Process/service cleanup remains untested, and final documentation and repository security review are still pending.
+**Current status:** The baseline inspection and inspection-script workflow have been implemented and validated. The automated test runner completed 11 test suites with zero failures, and all nine inspection scripts ran without reported failures. Disposable temporary-file/directory cleanup and child-process cleanup were tested successfully. Service cleanup remains untested, and final documentation and repository security review are still pending.
 
 ## 9. Testing and Validation
 
@@ -653,7 +653,7 @@ System services must be checked individually before management commands are used
 
 Testing will be performed incrementally. Each feature must have a validation procedure before it is treated as implemented.
 
-The test plan records the implemented checks and observed results. The current validation run completed successfully; cleanup remains unverified.
+The test plan records the implemented checks and observed results. The current validation run completed successfully. Disposable file and child-process cleanup tests passed; service cleanup remains unverified.
 
 ### 9.2 Test Plan
 
@@ -672,8 +672,8 @@ The test plan records the implemented checks and observed results. The current v
 | Service management | Inspect system manager and selected service details | Inspection script and test passed; no service states changed |
 | Log inspection | Query available journal entries and log directory | Inspection script and test passed; raw report is local-only |
 | Resource checks | Inspect disk, filesystem, memory, swap, and load information | Inspection script and test passed; raw report is local-only |
-| Bash automation | Run all inspection scripts and the consolidated test runner | Nine scripts passed; 10 test suites passed; zero failures |
-| Cleanup | Review and safely test the documented cleanup procedure | Disposable temporary-file cleanup test passed; process/service cleanup not tested |
+| Bash automation | Run all inspection scripts and the consolidated test runner | Nine scripts passed; 11 test suites passed; zero failures |
+| Cleanup | Review and safely test the documented cleanup procedure | Disposable temporary-file and child-process cleanup tests passed; service cleanup not tested |
 
 ### 9.3 Validation Principles
 
@@ -752,7 +752,7 @@ The project will be considered complete only after the applicable implementation
 - [x] Log inspection procedures are implemented and tested.
 - [x] Disk and resource inspection tasks are implemented and validated.
 - [x] Bash automation runner and direct runner test are implemented and tested.
-- [x] End-to-end validation passed: 10 test suites, zero failures.
+- [x] End-to-end validation passed: 11 test suites, zero failures.
 - [ ] Cleanup instructions are reviewed and safely tested.
 - [ ] Known limitations and unresolved issues are documented in the final review.
 
@@ -819,7 +819,8 @@ Do not delete the project guide or evidence as part of routine lab cleanup. Thes
 - [x] The exact cleanup targets were reviewed before removal.
 - [x] Only the disposable test file and its empty temporary directory were removed.
 - [x] No project files or services were targeted by this disposable test.
-- [ ] Process/service cleanup has not been exercised.
+- [x] Disposable child-process cleanup was exercised and verified.
+- [ ] Service cleanup has not been exercised.
 - [x] Project documentation and intended deliverables remain present.
 
 Cleanup commands must be tailored to the resources actually created. A general-purpose destructive command is not part of this project's default cleanup procedure.
@@ -889,11 +890,12 @@ At the end of implementation, distinguish concepts demonstrated through practica
 | Logs inspection script and test | `scripts/logs-inspection.sh`; `tests/test-logs-inspection.sh` | Implemented; automated test passed |
 | Resource inspection script and test | `scripts/resource-inspection.sh`; `tests/test-resource-inspection.sh` | Implemented; automated test passed |
 | Automation runner and test | `scripts/lab-runner.sh`; `tests/test-lab-runner.sh` | Implemented; runner test passed |
-| Consolidated test runner | `tests/run-all-tests.sh` | 10 test suites passed; zero failures |
+| Consolidated test runner | `tests/run-all-tests.sh` | 11 test suites passed; zero failures |
 | Automation run report | `local-output/automation-run-report.txt` | Nine scripts ran; zero failures; local-only output |
 | Sanitized evidence | `evidence/` | Baseline inspection procedure documented; review any additional evidence before publication |
 | Lab working directory and permissions demo | `lab-data/` | Created; demo file permissions inspected |
-| Cleanup procedure validation | Section 12 and related resources | Pending safe review and test |
+| Process cleanup test | `tests/test-process-cleanup.sh` | Disposable child process terminated and reaped; test passed |
+| Cleanup procedure validation | Section 12 and related resources | File and process cleanup tested; service cleanup and final review remain pending |
 
 ### 15.2 Evidence Requirements
 
@@ -957,11 +959,11 @@ Before declaring the project complete, review the following checklist.
 ### Implementation and Testing
 
 - [x] Inspection and automation stages 1–10 have been implemented.
-- [x] Shell scripts pass syntax checks and the 10-suite functional test run.
+- [x] Shell scripts pass syntax checks and the 11-suite functional test run.
 - [x] Implemented inspection tasks have been validated.
-- [x] Test results show 10 suites passed and zero failed.
+- [x] Test results show 11 suites passed and zero failed.
 - [ ] Troubleshooting limitations and unresolved issues have been reviewed for the final documentation.
-- [x] Cleanup guidance was reviewed and the disposable temporary-file cleanup test passed; process/service cleanup remains untested.
+- [x] Cleanup guidance was reviewed; disposable temporary-file and child-process cleanup tests passed. Service cleanup remains untested.
 
 ### Evidence and Repository
 
