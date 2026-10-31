@@ -3,6 +3,7 @@ set -uo pipefail
 
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPORT="$PROJECT_DIR/local-output/automation-run-report.txt"
+mkdir -p "$PROJECT_DIR/local-output"
 
 scripts=(
     system-inspection.sh

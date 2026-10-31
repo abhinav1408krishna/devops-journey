@@ -5,6 +5,7 @@ set -euo pipefail
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SCRIPT="$PROJECT_DIR/scripts/permissions-inspection.sh"
 DEMO_FILE="$PROJECT_DIR/lab-data/permissions-demo.txt"
+chmod 640 "$DEMO_FILE"
 
 OUTPUT="$(bash "$SCRIPT")"
 
