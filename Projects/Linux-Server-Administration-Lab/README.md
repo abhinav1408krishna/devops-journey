@@ -975,3 +975,8 @@ Before declaring the project complete, review the following checklist.
 - [ ] Git synchronization follows the DLOS batch workflow; no commit or push has been performed.
 
 The project is complete only when its applicable acceptance criteria have been met and supported by evidence. A finished guide is an important deliverable, but it is not a substitute for implementing and testing the lab.
+
+## CI Integration
+
+This project is automatically validated through Jenkins
+using GitHub source polling and its automated test suite.
