@@ -36,3 +36,15 @@ coverage/
 Projects/Linux-Server-Administration-Lab/local-output/
 Projects/Linux-Server-Administration-Lab/evidence/*-inspection-report.txt
 Projects/Linux-Server-Administration-Lab/evidence/automation-run-report.txt
+
+# Jenkins local data, backups and agent secrets
+**/jenkins-home-backup*.tar.gz
+**/secret-file
+**/agent.jar
+**/workspace/
+**/caches/
+**/secrets/
+**/credentials.xml
+**/master.key
+**/hudson.util.Secret
+**/identity.key.enc
