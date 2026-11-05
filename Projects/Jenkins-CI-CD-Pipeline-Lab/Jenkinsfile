@@ -1,0 +1,120 @@
+
+pipeline {
+    agent {
+        label 'linux-agent'
+    }
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(
+            numToKeepStr: '10',
+            artifactNumToKeepStr: '10'
+        ))
+    }
+
+    environment {
+        LINUX_LAB = 'Projects/Linux-Server-Administration-Lab'
+        REPORT_DIR = 'pipeline-reports'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Repository checkout is managed by Jenkins Pipeline SCM.'
+
+                sh '''
+                    set -eu
+
+                    echo "Workspace: $WORKSPACE"
+                    echo "Build number: $BUILD_NUMBER"
+                    echo "Git branch:"
+                    git branch --show-current
+                    echo "Git commit:"
+                    git rev-parse --short HEAD
+                '''
+            }
+        }
+
+        stage('Validate Project') {
+            steps {
+                sh '''
+                    set -eu
+
+                    echo "Validating Linux lab project..."
+
+                    test -d "$LINUX_LAB/scripts"
+                    test -d "$LINUX_LAB/tests"
+                    test -f "$LINUX_LAB/tests/run-all-tests.sh"
+
+                    echo "Project structure validation passed."
+                '''
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh '''
+                    set -eu
+
+                    mkdir -p "$REPORT_DIR"
+
+                    {
+                        echo "Jenkins CI/CD Pipeline Build"
+                        echo "Build Number: $BUILD_NUMBER"
+                        echo "Git Commit:"
+                        git rev-parse HEAD
+                        echo "Execution Identity:"
+                        id
+                        echo "Build Date (UTC):"
+                        date -u
+                    } > "$REPORT_DIR/build-info.txt"
+
+                    echo "Build preparation completed."
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh '''
+                    set -eu
+
+                    echo "Running Linux Server Administration test suites..."
+
+                    bash -o pipefail -c \
+                        'bash "$LINUX_LAB/tests/run-all-tests.sh" 2>&1 | tee "$REPORT_DIR/test-report.txt"'
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                if (fileExists('pipeline-reports')) {
+                    archiveArtifacts(
+                        artifacts: 'pipeline-reports/*.txt',
+                        fingerprint: true,
+                        allowEmptyArchive: true
+                    )
+                }
+            }
+
+            echo 'Pipeline execution finished.'
+        }
+
+        success {
+            echo 'CI/CD pipeline completed successfully.'
+        }
+
+        failure {
+            echo 'CI/CD pipeline failed. Review the stage logs and test report.'
+        }
+
+        cleanup {
+            cleanWs()
+        }
+    }
+}
