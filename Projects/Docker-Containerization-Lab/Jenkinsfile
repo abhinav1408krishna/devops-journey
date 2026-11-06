@@ -1,0 +1,141 @@
+
+pipeline {
+    agent {
+        label 'linux-agent'
+    }
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+    }
+
+    environment {
+        PROJECT_DIR = 'Projects/Docker-Containerization-Lab'
+        REPORT_DIR = 'docker-reports'
+        COMPOSE_PROJECT_NAME = 'jenkins-docker-lab'
+        HOST_PORT = '5001'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "Workspace: ${WORKSPACE}"
+                sh 'git rev-parse --short HEAD'
+            }
+        }
+
+        stage('Validate Project') {
+            steps {
+                sh '''
+                    set -eu
+
+                    test -f "$PROJECT_DIR/Dockerfile"
+                    test -f "$PROJECT_DIR/compose.yaml"
+                    test -f "$PROJECT_DIR/app/app.py"
+                    test -f "$PROJECT_DIR/app/requirements.txt"
+
+                    echo "Project structure validated."
+                '''
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                    set -eu
+
+                    docker compose \
+                      -p "$COMPOSE_PROJECT_NAME" \
+                      -f "$PROJECT_DIR/compose.yaml" \
+                      build
+                '''
+            }
+        }
+
+        stage('Deploy Test Container') {
+            steps {
+                sh '''
+                    set -eu
+
+                    mkdir -p "$REPORT_DIR"
+
+                    docker compose \
+                      -p "$COMPOSE_PROJECT_NAME" \
+                      -f "$PROJECT_DIR/compose.yaml" \
+                      up -d
+                '''
+            }
+        }
+
+        stage('Test Application') {
+            steps {
+                sh '''
+                    set -eu
+
+                    BASE_URL="http://localhost:5001"
+                    ready=false
+
+                    for attempt in $(seq 1 20); do
+                        if curl -fsS "$BASE_URL/health" >/dev/null; then
+                            ready=true
+                            break
+                        fi
+                        sleep 2
+                    done
+
+                    if [ "$ready" != "true" ]; then
+                        echo "Application failed to become healthy."
+                        exit 1
+                    fi
+
+                    curl -fsS "$BASE_URL/" \
+                      > "$REPORT_DIR/home-response.json"
+
+                    curl -fsS "$BASE_URL/health" \
+                      > "$REPORT_DIR/health-response.json"
+
+                    curl -fsS "$BASE_URL/visit" \
+                      > "$REPORT_DIR/visit-response.json"
+
+                    grep -q '"status":"healthy"' \
+                      "$REPORT_DIR/health-response.json"
+
+                    grep -q '"project":"Docker Containerization Lab"' \
+                      "$REPORT_DIR/home-response.json"
+
+                    grep -q '"visit_count":' \
+                      "$REPORT_DIR/visit-response.json"
+
+                    echo "All Docker application tests passed."
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            sh '''
+                docker compose \
+                  -p "$COMPOSE_PROJECT_NAME" \
+                  -f "$PROJECT_DIR/compose.yaml" \
+                  down || echo "Warning: Docker cleanup encountered an error."
+            '''
+
+            archiveArtifacts artifacts: 'docker-reports/*.json',
+                             allowEmptyArchive: true
+        }
+
+        success {
+            echo 'Docker CI/CD pipeline completed successfully.'
+        }
+
+        failure {
+            echo 'Docker CI/CD pipeline failed. Review the stage logs.'
+        }
+
+        cleanup {
+            cleanWs()
+        }
+    }
+}
