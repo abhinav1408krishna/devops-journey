@@ -2,17 +2,22 @@
 
 This file is the portfolio index for projects planned, in progress, blocked, and completed during the DevOps Learning Operating System journey. Project status must reflect actual progress and be supported by evidence.
 
-## Project Portfolio
+## Completed Projects
 
-- [ ] Linux Server Administration Lab — In Progress (core implementation and tests complete; final review pending)
+- [x] [Linux Server Administration Lab](Projects/Linux-Server-Administration-Lab/README.md)
+- [x] [Jenkins Fundamentals & Administration Lab](Projects/Jenkins-Fundamentals-Administration-Lab/README.md)
+- [x] [Jenkins CI/CD Pipeline Automation Lab](Projects/Jenkins-CI-CD-Pipeline-Lab/README.md)
+- [x] [Docker Containerization Lab](Projects/Docker-Containerization-Lab/README.md)
+- [x] [Kubernetes Deployment & Orchestration Lab](Projects/Kubernetes-Deployment-Orchestration-Lab/README.md)
+
+## Planned Projects
+
 - [ ] Networking Troubleshooting Toolkit
 - [ ] Advanced Git Workflow Project
 - [ ] Bash Automation Toolkit
 - [ ] Python DLOS CLI
-- [ ] Dockerized Web Application
 - [ ] Docker Compose Multi-Service Application
 - [ ] Kubernetes Voting Application
-- [ ] Jenkins CI/CD Pipeline
 - [ ] AWS Infrastructure with Terraform
 - [ ] Ansible Server Automation
 - [ ] Monitoring Stack (Prometheus + Grafana)

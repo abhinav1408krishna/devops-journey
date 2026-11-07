@@ -101,3 +101,54 @@ Jenkins manages the archived artifacts independently of the cleaned workspace.
 This project currently demonstrates continuous integration and artifact management.
 
 Container image construction, registry publication, automated deployment, and rollback are outside its current scope.
+
+## 10. Lab-Verified Pipeline Troubleshooting
+
+### SCM Checkout Verification
+
+The pipeline was configured to retrieve its Jenkinsfile from the GitHub repository.
+
+The job used:
+- Pipeline script from SCM.
+- Git as the source control provider.
+- The `main` branch.
+- A project-specific Jenkinsfile path.
+- Lightweight checkout.
+
+The successful build console confirmed the checked-out commit and Jenkinsfile path.
+
+If checkout fails, inspect the repository URL, branch, Jenkins console output, repository visibility, and Git availability on the agent.
+
+### Test Failure and Pipeline Result
+
+An intentional failure scenario was tested using Jenkins Replay.
+
+The resulting build was marked failed, confirming that the pipeline failure handling executed.
+
+The original committed Linux test scripts were not permanently modified for this exercise.
+
+### Pipeline Failure Propagation
+
+The test stage uses Bash `pipefail` when piping test output through `tee`.
+
+This ensures that a failing test runner causes the pipeline command to return a failure status even when output is also written to a report file.
+
+### Artifact and Workspace Verification
+
+The successful pipeline archived its generated reports before workspace cleanup.
+
+Verify artifacts through the Jenkins build page under **Artifacts**.
+
+The reports remain available through Jenkins artifact retention even after the workspace has been cleaned.
+
+### Operational Checks
+
+For a failed build:
+
+1. Open the affected build's Console Output.
+2. Identify the first failing stage.
+3. Inspect the command and its exit status.
+4. Check whether the expected report was generated.
+5. Confirm whether the post-build archive and cleanup actions ran.
+
+A failed build is not automatically evidence of failed cleanup. Review the post-build log separately.

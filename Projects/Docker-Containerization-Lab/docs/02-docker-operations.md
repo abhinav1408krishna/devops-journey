@@ -132,3 +132,86 @@ Remove the volume only when its data is no longer required:
 ```bash
 docker compose down -v
 ```
+## 9. Lab-Verified Troubleshooting and Verification
+
+### Named Volume Permission Issue
+
+During initial container testing, the application could not write its visit counter to the mounted data directory.
+
+The issue was caused by directory ownership and permissions when the named volume was mounted.
+
+The Dockerfile was corrected to create the application data directory and assign ownership to the non-root application user:
+
+`RUN mkdir -p /app/data && chown -R appuser:appuser /app`
+
+The application continues to run as the non-root `appuser`.
+
+**Verification:**
+
+`curl http://localhost:5000/visit`
+
+`docker compose restart web`
+
+`curl http://localhost:5000/visit`
+
+The visit counter continued across the container restart, confirming named-volume persistence.
+
+### Docker Socket Permission Issue in Jenkins
+
+The Jenkins agent initially could not access the Docker daemon.
+
+The socket was owned by `root:docker`. The dedicated agent account was added to the Docker group and its process was restarted to receive the updated group membership.
+
+Verification:
+
+`sudo -u jenkins-agent id`
+
+`sudo -u jenkins-agent docker ps`
+
+The agent successfully accessed Docker after its group membership was refreshed.
+
+**Security consideration:** Docker group membership provides effectively root-equivalent host access. Do not grant it to untrusted build accounts or expose the Docker daemon through an unauthenticated network connection.
+
+### Application Startup Readiness
+
+During the Jenkins Docker pipeline, an initial health request briefly failed while the application was starting.
+
+The pipeline used a bounded retry loop before declaring the health check unsuccessful.
+
+For local diagnosis:
+
+`docker compose ps`
+
+`docker compose logs --tail=100 web`
+
+`curl -fsS http://localhost:5000/health`
+
+Check container state and application logs before changing configuration.
+
+### Compose Cleanup Verification
+
+The Jenkins integration pipeline used a separate Compose project name and host port to avoid colliding with the manually running application and Jenkins controller.
+
+After the pipeline completed, its Compose resources were removed.
+
+For local cleanup, inspect the resources first:
+
+`docker compose ps`
+
+`docker compose down`
+
+`docker compose ps -a`
+
+Do not use `docker compose down -v` unless deletion of the named volume and its persistent application data is intended.
+
+### Jenkins Docker Pipeline Artifacts
+
+The Jenkins Docker pipeline successfully built the image, started the application, and tested its endpoints.
+
+The archived reports were:
+
+- `docker-reports/home-response.json`
+- `docker-reports/health-response.json`
+- `docker-reports/visit-response.json`
+
+These artifacts provide evidence of application responses captured during the Jenkins build.

@@ -38,10 +38,30 @@ devops-journey/
 ├── Day3/
 ├── Day4/
 ├── Day5/
+├── Projects/
+│   ├── Linux-Server-Administration-Lab/
+│   ├── Jenkins-Fundamentals-Administration-Lab/
+│   ├── Jenkins-CI-CD-Pipeline-Lab/
+│   ├── Docker-Containerization-Lab/
+│   └── Kubernetes-Deployment-Orchestration-Lab/
 ├── Templates/
 └── Resources/
     └── Linux-Coverage.md
 ```
+
+---
+
+## Completed Portfolio Projects
+
+The repository currently contains five implemented and verified DevOps portfolio projects:
+
+1. [Linux Server Administration Lab](Projects/Linux-Server-Administration-Lab/README.md)
+2. [Jenkins Fundamentals & Administration Lab](Projects/Jenkins-Fundamentals-Administration-Lab/README.md)
+3. [Jenkins CI/CD Pipeline Automation Lab](Projects/Jenkins-CI-CD-Pipeline-Lab/README.md)
+4. [Docker Containerization Lab](Projects/Docker-Containerization-Lab/README.md)
+5. [Kubernetes Deployment & Orchestration Lab](Projects/Kubernetes-Deployment-Orchestration-Lab/README.md)
+
+See [PROJECTS.md](PROJECTS.md) for the complete portfolio index and planned projects.
 
 ---
 

@@ -980,3 +980,47 @@ The project is complete only when its applicable acceptance criteria have been m
 
 This project is automatically validated through Jenkins
 using GitHub source polling and its automated test suite.
+
+## Lab-Verified Troubleshooting and Test Evidence
+
+### Test Runner Invocation
+
+The test runner was successfully executed using Bash:
+
+`bash Projects/Linux-Server-Administration-Lab/tests/run-all-tests.sh`
+
+**Verified result:**
+- 11 test suites executed.
+- 11 test suites passed.
+- Zero test failures.
+
+### Generated Test Report
+
+The runner generates a local report at:
+
+`Projects/Linux-Server-Administration-Lab/local-output/automation-report-run.txt`
+
+This output is excluded from Git publication through `.gitignore`.
+
+Check the local report:
+
+`ls -l Projects/Linux-Server-Administration-Lab/local-output/`
+
+### Jenkins Integration Verification
+
+The Linux lab was successfully executed through the Jenkins CI/CD pipeline.
+
+The pipeline checked out the repository, validated the project structure, executed all 11 test suites, archived the test report, and cleaned its workspace.
+
+### Troubleshooting Guidance
+
+If the test runner cannot be executed directly, invoke it using Bash.
+
+If a test fails:
+1. Capture the failing suite name and output.
+2. Run the affected test independently.
+3. Inspect the relevant script and test inputs.
+4. Correct the underlying issue.
+5. Run the complete test suite again.
+
+Do not change file permissions broadly just to make a script executable.

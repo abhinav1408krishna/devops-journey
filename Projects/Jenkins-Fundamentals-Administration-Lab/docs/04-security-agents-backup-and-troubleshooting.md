@@ -433,3 +433,73 @@ After completing these exercises, the following concepts were demonstrated:
 - Jenkins troubleshooting and security review.
 
 This project demonstrates foundational Jenkins administration through practical exercises. It is an independent learning and portfolio project, not a production deployment.
+
+## 10. Lab-Verified Operational Troubleshooting
+
+### Controller Restart and Agent Reconnection
+
+During the lab, the Jenkins controller was restarted to verify agent reconnection.
+
+Verification:
+
+```bash
+sudo systemctl status jenkins
+```
+
+The controller returned to the active state. The inbound agent was restarted using its configured connection command and successfully reconnected as `linux-agent-02`.
+
+A remote execution job was run again to verify agent availability.
+
+### Agent Execution Identity
+
+The inbound agent uses a dedicated Linux account: `jenkins-agent`.
+
+Inspect its identity:
+
+`sudo -u jenkins-agent id`
+
+Check the agent process:
+
+`ps -u jenkins-agent -f`
+
+Confirm that Jenkins reports the node as online before scheduling remote jobs.
+
+### Docker Access from the Agent
+
+During the Docker integration exercise, the agent initially could not access the Docker daemon.
+
+The Docker socket was owned by `root:docker` with restricted group permissions. The agent account was added to the Docker group and its process was restarted to receive the updated group membership.
+
+Verification:
+
+`sudo -u jenkins-agent id`
+
+`sudo -u jenkins-agent docker ps`
+
+The Docker command succeeded after the agent restart.
+
+**Security note:** Docker group membership provides effectively root-equivalent control over the host. Grant this access only to trusted accounts and workloads. Do not expose the Docker daemon through an unauthenticated TCP socket.
+
+### Backup Verification
+
+The Jenkins backup was stored outside the Git repository under `/var/backups/jenkins/`.
+
+The archive was created with restricted permissions.
+
+The archive was successfully inspected without extraction:
+
+`sudo tar -tzf /var/backups/jenkins/jenkins-home-backup-corrected.tar.gz`
+
+A successful archive listing verifies that the archive can be read, but does not prove that a complete Jenkins restoration will succeed. A full restore exercise was outside the scope of this lab.
+
+### Protected Jenkins and Agent Files
+
+Agent connection secrets, kubeconfig files, tokens, Jenkins home data, and backup archives must remain outside the published repository.
+
+Check repository status and exclusions before publishing:
+
+`git status --short`
+
+`git check-ignore -v secret-file agent.jar`
+
+The second command applies when those local files exist at the repository root. Never display or copy secret contents into documentation or build logs.
