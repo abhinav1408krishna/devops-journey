@@ -1,0 +1,195 @@
+pipeline {
+    agent {
+        label 'linux-agent'
+    }
+
+    options {
+        timestamps()
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(
+            numToKeepStr: '10',
+            artifactNumToKeepStr: '10'
+        ))
+    }
+
+    environment {
+        PROJECT_DIR = 'Projects/Kubernetes-Deployment-Orchestration-Lab'
+        KUBECONFIG = '/home/jenkins-agent/.kube/config'
+        NAMESPACE = 'devops-lab'
+        REPORT_DIR = 'kubernetes-reports'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Kubernetes Access Check') {
+            steps {
+                sh '''
+                    set -eu
+
+                    echo "Checking Kubernetes authentication..."
+
+                    for resource in configmaps deployments services horizontalpodautoscalers
+                    do
+                        echo "Checking permissions for $resource"
+
+                        test "$(kubectl auth can-i get "$resource" -n "$NAMESPACE")" = "yes"
+                        test "$(kubectl auth can-i create "$resource" -n "$NAMESPACE")" = "yes"
+                        test "$(kubectl auth can-i patch "$resource" -n "$NAMESPACE")" = "yes"
+                    done
+
+                    test "$(kubectl auth can-i get pods -n "$NAMESPACE")" = "yes"
+                    test "$(kubectl auth can-i list pods -n "$NAMESPACE")" = "yes"
+                    test "$(kubectl auth can-i create pods/portforward -n "$NAMESPACE")" = "yes"
+
+                    echo "All required Kubernetes permissions verified."
+
+                    echo "Checking current application resources..."
+                    kubectl get deployments,services -n "$NAMESPACE"
+                '''
+            }
+        }
+
+        stage('Validate Kubernetes Manifests') {
+            steps {
+                sh '''
+                    set -eu
+                    mkdir -p "$REPORT_DIR"
+
+                    for file in \
+                        configmap.yaml \
+                        deployment.yaml \
+                        service.yaml \
+                        hpa.yaml
+                    do
+                        echo "Validating $file"
+
+                        kubectl apply --dry-run=server \
+                            -f "$PROJECT_DIR/k8s/$file"
+                    done
+
+                    echo "All managed manifests validated successfully."
+                '''
+            }
+        }
+
+        stage('Deploy Kubernetes Resources') {
+            steps {
+                sh '''
+                    set -eu
+
+                    kubectl apply \
+                        -f "$PROJECT_DIR/k8s/configmap.yaml"
+
+                    kubectl apply \
+                        -f "$PROJECT_DIR/k8s/deployment.yaml"
+
+                    kubectl apply \
+                        -f "$PROJECT_DIR/k8s/service.yaml"
+
+                    kubectl apply \
+                        -f "$PROJECT_DIR/k8s/hpa.yaml"
+
+                    echo "Kubernetes resources applied."
+                '''
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh '''
+                    set -eu
+
+                    kubectl rollout status deployment/flask-app \
+                        -n "$NAMESPACE" \
+                        --timeout=120s
+
+                    kubectl get deployments,pods,services,hpa \
+                        -n "$NAMESPACE" \
+                        -o wide | tee "$REPORT_DIR/resources.txt"
+
+                    kubectl get pods \
+                        -n "$NAMESPACE" \
+                        -o json > "$REPORT_DIR/pods.json"
+
+                    kubectl get hpa \
+                        -n "$NAMESPACE" \
+                        -o yaml > "$REPORT_DIR/hpa.yaml"
+                '''
+            }
+        }
+
+        stage('Test Application Health') {
+            steps {
+                sh '''
+                    set -eu
+
+                    echo "Starting Kubernetes port-forward..."
+
+                    kubectl port-forward \
+                        -n "$NAMESPACE" \
+                        service/flask-app-service 18081:80 \
+                        > "$REPORT_DIR/port-forward.log" 2>&1 &
+
+                    PF_PID=$!
+
+                    trap 'kill "$PF_PID" 2>/dev/null || true' EXIT
+
+                    READY=0
+
+                    for attempt in $(seq 1 20); do
+                        if curl -fsS \
+                            http://127.0.0.1:18081/health \
+                            -o "$REPORT_DIR/health.json"; then
+
+                            READY=1
+                            break
+                        fi
+
+                        sleep 2
+                    done
+
+                    if [ "$READY" -ne 1 ]; then
+                        echo "Application health check failed."
+                        cat "$REPORT_DIR/port-forward.log"
+                        exit 1
+                    fi
+
+                    grep -q '"status":"healthy"' \
+                        "$REPORT_DIR/health.json"
+
+                    curl -fsS \
+                        http://127.0.0.1:18081/ \
+                        -o "$REPORT_DIR/home.json"
+
+                    echo "Application health check passed."
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts(
+                artifacts: 'kubernetes-reports/*',
+                allowEmptyArchive: true
+            )
+        }
+
+        success {
+            echo 'Kubernetes deployment pipeline completed successfully.'
+        }
+
+        failure {
+            echo 'Kubernetes deployment pipeline failed. Review the stage logs.'
+        }
+
+        cleanup {
+            cleanWs()
+        }
+    }
+}
