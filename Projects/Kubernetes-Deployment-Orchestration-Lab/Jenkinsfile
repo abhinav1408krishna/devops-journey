@@ -44,7 +44,7 @@ pipeline {
 
                     test "$(kubectl auth can-i get pods -n "$NAMESPACE")" = "yes"
                     test "$(kubectl auth can-i list pods -n "$NAMESPACE")" = "yes"
-                    test "$(kubectl auth can-i create pods/portforward -n "$NAMESPACE")" = "yes"
+                    test "$(kubectl auth can-i create pods --subresource=portforward -n "$NAMESPACE")" = "yes"
 
                     echo "All required Kubernetes permissions verified."
 
